@@ -1,10 +1,12 @@
 import { useState } from "react"
 import Header from './components/Header'
 import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
 import { FaTheaterMasks } from "react-icons/fa"
 
 export default function App()
 {
+  const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -35,6 +37,14 @@ export default function App()
 
     }
   ])
+  // Add Task
+
+  const addTask = (task) =>
+  {
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = { id, ...task };
+    setTasks([...tasks, newTask]);
+  }
 
   // Delete task
   const deleteTask = (id) =>
@@ -49,7 +59,12 @@ export default function App()
 
   return (
     <div className='container'>
-      <Header />
+      <Header
+        onAdd={() =>
+          setShowAddTask(!showAddTask)}
+        showAddTask={showAddTask}
+      />
+      {showAddTask && <AddTask onAdd={addTask} />}
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
     </div>
   )
