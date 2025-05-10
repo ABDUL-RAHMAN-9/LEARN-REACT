@@ -1,0 +1,31 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 64px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.container {
+
+  padding: 10rem;
+  border: 2px solid white;
+  border-radius: 32px;
+  font-size: 20px;
+
+}
+
+ul li {
+  list-style-type: none;
+}
