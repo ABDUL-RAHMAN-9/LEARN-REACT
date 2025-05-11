@@ -22,6 +22,7 @@ const TaskForm = ({ onAdd }) =>
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder='Add new task...'
+                    maxLength={30}
                     className='flex-1 px-4 py-2 border rounded'
                 />
                 <button
