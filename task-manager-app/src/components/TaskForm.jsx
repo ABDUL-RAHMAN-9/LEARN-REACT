@@ -7,7 +7,10 @@ const TaskForm = ({ onAdd }) =>
     {
         e.preventDefault();
         if (!text.trim())
+        {
+            alert('Please enter a task first!');
             return;
+        }
         onAdd({ text, completed: false });
         setText("");
     }
