@@ -26,7 +26,7 @@ const App = () =>
   }
   return (
     <>
-      <div className='min-h-screen bg-gray-900 p-20'>
+      <div className='min-h-screen bg-gray-900 p-20 flex justify-center items-center'>
         <div className="min-h-screen bg-gray-100 rounded-2xl p-6">
           <div className="max-w-xl mx-auto">
             <div className="text-3xl font-bold mb-4 text-center">📝 Task Manager
