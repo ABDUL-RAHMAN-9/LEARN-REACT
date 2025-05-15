@@ -11,7 +11,7 @@ const Post4 = () =>
                 src=
                 "https://media.geeksforgeeks.org/img-practice/banner/cp-maths-java-thumbnail.png"
                 width={20}
-                height={250}
+                height={'auto'}
             />
             <Card.Body>
                 <Card.Title>Computer Network</Card.Title>

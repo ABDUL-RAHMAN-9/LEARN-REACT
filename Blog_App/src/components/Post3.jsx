@@ -10,7 +10,7 @@ const Post3 = () =>
                 src=
                 "https://media.geeksforgeeks.org/img-practice/banner/google-test-series-thumbnail.png"
                 width={20}
-                height={250}
+                height={'auto'}
             />
             <Card.Body>
                 <Card.Title>Algorithm</Card.Title>

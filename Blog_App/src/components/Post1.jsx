@@ -9,7 +9,7 @@ const Post1 = () =>
                     variant="top"
                     src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230305183140/Javascript.jpg"
                     width={20}
-                    height={250}
+                    height={'auto'}
 
                 />
                 <Card.Body>

@@ -11,7 +11,7 @@ const Post2 = () =>
                 src=
                 "https://media.geeksforgeeks.org/img-practice/banner/coa-gate-2022-thumbnail.png"
                 width={20}
-                height={250}
+                height={'auto'}
             />
             <Card.Body>
                 <Card.Title>Data Structure</Card.Title>
