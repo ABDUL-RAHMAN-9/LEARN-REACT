@@ -1,31 +1,13 @@
 import React from 'react'
-// import Api from '../API/Api'
 
-const Card = () =>
+const Card = ({ image, category, date, title, summary, author, likes }) =>
 {
     return (
 
-        <div className='container'>
-            <div className="container_info">
-                <div className="img_container">bhono</div>
-                <div className="card_content_container">
-                    <div className="card_tag"></div>
-                    <div className="date_container"></div>
-                    <div className="card_heading"></div>
-                    <div className="card_description"><h1></h1></div>
-                    {/* ADD btn here  using btn compoenent */}
-                </div>
-                <div className="author">
-                    {/* give img using the assests */}
-                    <div className="avatar"></div>
-                    <div className="author_name"></div>
-                </div>
-                <div className="actions">
-                    <div className="like_btn"></div>
-                    <div className="comment_btn"></div>
-                </div>
+        <div className='max-w-xl rounded-2xl overflow-hidden shadow-md bg-white p-4 space-y-3'>
+            <img src={image} alt="cover" className='w-full h-48 object-cover rounded-2xl' />
+            
 
-            </div>
         </div>
     )
 }
