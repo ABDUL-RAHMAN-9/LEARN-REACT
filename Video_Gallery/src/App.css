@@ -1,0 +1,122 @@
+/* === Global Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === Main Container === */
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+/* === Gallery Styling === */
+.gallery {
+    width: 180vw;
+    height: 190vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10em;
+}
+
+/* === Row Layout === */
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Center alignment for middle row */
+.row:nth-child(2) {
+    justify-content: space-around;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === Item Card === */
+.item {
+    position: relative;
+    width: 400px;
+    height: 275px;
+    overflow: hidden;
+}
+
+/* === Video Wrapper === */
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(2);
+    transition: 0.3s all;
+}
+
+.video-wrapper>div {
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+/* Show video on hover */
+.item:hover .video-wrapper>div {
+    opacity: 1;
+}
+
+/* === Video Name Label === */
+#videoName {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 30px;
+    font-family: 'FK Display', sans-serif;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Fade in video name on hover */
+.item:hover #videoName {
+    opacity: 1;
+}
+
+/* === Preview Image Container === */
+.preview-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.preview-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+/* Fade out preview on hover */
+.item:hover .preview-img img {
+    opacity: 0;
+}
