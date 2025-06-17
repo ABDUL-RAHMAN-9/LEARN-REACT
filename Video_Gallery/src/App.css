@@ -16,8 +16,8 @@
 
 /* === Gallery Styling === */
 .gallery {
-    width: 180vw;
-    height: 190vh;
+    width: 200vw;
+    height: 100vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,6 +27,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 10em;
+    overflow: visible;
 }
 
 /* === Row Layout === */
@@ -109,9 +110,6 @@ img {
 }
 
 .preview-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     opacity: 1;
     transition: opacity 300ms;
 }

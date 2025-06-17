@@ -6,7 +6,11 @@ import ReactPlayer from 'react-player';
 function App()
 {
   const galleryRef = useRef(null);
+  const containerRef = useRef(null);
   const [items, setItems] = useState([]);
+
+  const mousePos = useRef({ x: 0, y: 0 });
+  const currentPos = useRef({ x: 0, y: 0 });
 
   useEffect(() =>
   {
@@ -37,42 +41,43 @@ function App()
 
     generateItems();
 
-    // Mouse movement handler for parallax effect
+    const sensitivity = 20;
+
     const handleMouseMove = (e) =>
     {
-      const { clientX, clientY, currentTarget } = e;
-      const { width, height } = currentTarget.getBoundingClientRect();
-      const centerX = width / 2;
-      const centerY = height / 2;
+      const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+      const centerX = left + width / 2;
+      const centerY = top + height / 2;
 
-      const sensitivity = 10;
-      const deltaX = (clientX - centerX) / sensitivity;
-      const deltaY = (clientY - centerY) / sensitivity;
+      mousePos.current.x = (e.clientX - centerX) / sensitivity;
+      mousePos.current.y = (e.clientY - centerY) / sensitivity;
+    };
+
+    const animate = () =>
+    {
+      currentPos.current.x += (mousePos.current.x - currentPos.current.x) * 0.1;
+      currentPos.current.y += (mousePos.current.y - currentPos.current.y) * 0.1;
 
       if (galleryRef.current)
       {
-        galleryRef.current.style.transform = `translate(calc(-50% + ${deltaX}px), calc(-50% + ${deltaY}px))`;
+        galleryRef.current.style.transform = `translate(calc(-50% + ${currentPos.current.x}px), calc(-50% + ${currentPos.current.y}px))`;
       }
+
+      requestAnimationFrame(animate);
     };
 
-    const container = document.querySelector('.container');
-    if (container)
-    {
-      container.addEventListener('mousemove', handleMouseMove);
-    }
+    const container = containerRef.current;
+    container.addEventListener('mousemove', handleMouseMove);
+    animate(); // Start animation loop
 
-    // Cleanup mousemove event listener
     return () =>
     {
-      if (container)
-      {
-        container.removeEventListener('mousemove', handleMouseMove);
-      }
+      container.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   return (
-    <div className="container">
+    <div className="container" ref={containerRef}>
       <div className="gallery" ref={galleryRef}>
         {items.map((row, rowIndex) => (
           <div key={`row-${rowIndex}`} className="row">
