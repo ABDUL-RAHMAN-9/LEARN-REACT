@@ -52,7 +52,7 @@ const Navbar = () =>
                                 }}
                                 className={`
                   px-4 py-2 rounded-xl transition-all duration-300
-                  hover:bg-indigo-600 hover:scale-105 hover:shadow-lg
+                  hover:bg-indigo-600 hover:scale-105
                   ${scrolled ? 'text-white' : 'text-gray-100'}
                 `}
                             >
