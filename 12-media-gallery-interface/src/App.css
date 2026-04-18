@@ -1,0 +1,114 @@
+/* Add this to the TOP of App.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;800&family=JetBrains+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* THE FLOATING GALLERY ENGINE */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    will-change: transform;
+}
+
+.row {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* THE MEDIA CARD */
+.item {
+    position: relative;
+    width: 450px;
+    height: 280px;
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.4s ease;
+}
+
+.item:hover {
+    border-color: var(--accent);
+}
+
+.preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+}
+
+.item:hover .preview-img {
+    transform: scale(1.1);
+    opacity: 0.2;
+}
+
+/* OVERLAY HUD */
+.item-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.video-label {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-top: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease 0.1s;
+}
+
+.item:hover .video-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SYSTEM HUD */
+.system-hud {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.system-hud h1 {
+    font-size: 3.5rem;
+    line-height: 0.8;
+    margin-bottom: 10px;
+}
