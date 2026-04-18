@@ -1,0 +1,35 @@
+/* App.css */
+
+body,
+html,
+#root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #1a202c;
+    /* Tailwind’s gray-900 */
+    overflow-x: hidden;
+}
+
+#root>div {
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 60% 40%;
+    }
+
+    100% {
+        background-position: 50% 50%;
+    }
+}
+
+.glassy-bg-animated {
+    animation: gradientShift 15s ease-in-out infinite;
+    background-size: 200% 200%;
+}
