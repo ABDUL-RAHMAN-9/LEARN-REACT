@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;800&family=JetBrains+Mono&display=swap');
+
+:root {
+    --ink-black: #050505;
+    --panel-grey: #0d0d0d;
+    --security-red: #ff4b4b;
+    --action-pink: #ff2ebc;
+    --warning-orange: #ffab2e;
+    --go-green: #00ff88;
+    --border-dim: #1a1a1a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--ink-black);
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dashboard-wrapper {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    height: 100vh;
+}
+
+.control-hub {
+    background: var(--panel-grey);
+    border-right: 1px solid var(--border-dim);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.visual-stage {
+    padding: 80px;
+    background-image: radial-gradient(#111 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.btn-core {
+    padding: 20px;
+    border: none;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-pink {
+    background: var(--action-pink);
+    color: #000;
+}
+
+.btn-pink:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 var(--action-pink);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-dim);
+    color: #888;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.module-card {
+    background: #000;
+    border: 1px solid var(--border-dim);
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.module-orange {
+    border-left: 4px solid var(--warning-orange);
+}
+
+.module-green {
+    border-left: 4px solid var(--go-green);
+}
+
+.module-pink {
+    border-left: 4px solid var(--action-pink);
+}
+
+.boot-loader {
+    width: 100%;
+    height: 2px;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+}
+
+.boot-progress {
+    position: absolute;
+    height: 100%;
+    background: var(--go-green);
+    width: 50%;
+    animation: load 1.5s infinite;
+}
+
+@keyframes load {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
