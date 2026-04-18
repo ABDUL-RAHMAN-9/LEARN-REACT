@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+    /* Default Light Mode Colors */
+    --page-bg: #f1f5f9;
+    /* Background behind the box */
+    --app-bg: #ffffff;
+    /* Background inside the box */
+    --border: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #0ea5e9;
+    --card-inner: #f8fafc;
+    /* Small cards inside the app */
+}
+
+.dark {
+    /* Dark Mode Colors */
+    --page-bg: #020617;
+    /* Deep black for outer background */
+    --app-bg: #0f172a;
+    /* Dark Navy for the application box */
+    --border: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --card-inner: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--page-bg);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Centers the box vertically */
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+}
+
+/* THE MAIN BOX (The Application Shell) */
+.dashboard-container {
+    background-color: var(--app-bg);
+    border: 1px solid var(--border);
+    /* Professional defined border */
+    width: 100%;
+    max-width: 850px;
+    padding: 3.5rem;
+    border-radius: 40px;
+    /* Modern rounded look */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* Deep shadow for depth */
+    position: relative;
+}
+
+/* Subtle glow for dark mode box */
+.dark .dashboard-container {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+/* FIX: Stat Card Text Visibility & Border */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--card-inner);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.stat-card h4 {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.stat-card p {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 8px 0 0 0;
+    color: var(--text-main);
+}
+
+/* Input/Button Styling inside the box */
+input,
+select {
+    background: var(--card-inner);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 16px;
+    outline: none;
+}
+
+button.toggle-theme {
+    position: absolute;
+    /* Moves it inside the box top-right */
+    top: 30px;
+    right: 30px;
+    background: var(--card-inner);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button.toggle-theme:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}

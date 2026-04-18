@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap');
+
+:root {
+  --bg: #09090b;
+  --card: rgba(24, 24, 27, 0.8);
+  --border: #27272a;
+  --accent: #6366f1;
+  --danger: #f43f5e;
+}
+
+body {
+  background-color: var(--bg);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 50px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  padding: 35px;
+  border-radius: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.task {
+  background: rgba(255, 255, 255, 0.03);
+  margin: 12px 0;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.task.reminder {
+  border-left-color: var(--accent);
+  background: rgba(99, 102, 241, 0.05);
+  border-right: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.task p {
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono';
+  color: #71717a;
+  margin: 0;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.form-control input {
+  width: 100%;
+  background: #000;
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: 14px;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-control input:focus {
+  border-color: var(--accent);
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.btn-submit {
+  background: white;
+  color: black;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-submit:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}

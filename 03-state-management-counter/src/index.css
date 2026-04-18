@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
+:root {
+    --bg-black: #09090b;
+    --card-zinc: #18181b;
+    --accent-purple: #8b5cf6;
+    --text-dim: #71717a;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+}
+
+/* Background Ambient Glow */
+body::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-purple);
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.counter-card {
+    background: var(--card-zinc);
+    border: 1px solid #27272a;
+    padding: 3rem;
+    border-radius: 32px;
+    text-align: center;
+    width: 380px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.status-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent-purple);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 100px;
+    margin: 1rem 0 2rem 0;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.value-positive {
+    color: #ffffff;
+}
+
+.value-negative {
+    color: #ef4444;
+    text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 12px;
+}
+
+button {
+    background: #27272a;
+    color: white;
+    border: 1px solid #3f3f46;
+    padding: 1rem;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #3f3f46;
+    border-color: var(--accent-purple);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Specific styling for Reset button */
+.btn-reset {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--bg-black);
+}
+
+.btn-inc {
+    color: var(--accent-purple);
+}
+
+.btn-dec {
+    color: #f43f5e;
+}
+
+.telemetry-bar {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-top: 1px solid #27272a;
+    padding-top: 1.5rem;
+}
